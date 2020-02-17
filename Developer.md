@@ -19,3 +19,6 @@
 # Add new jinja_context python function (ex: current_merchant_id)
 - define new function to superset/jinja_context.py
 - add the new function name to self.context block in def _init_() function
+
+# Flask app routing table
+- RUN: docker-compose exec superset flask routes
