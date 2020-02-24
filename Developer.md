@@ -7,7 +7,7 @@
 
 # Customize frontend (React JS)
 - Frontend source location: superset-frontend/src, for example jsx file for Welcome page is located at superset-frontend/src/welcome
-- Run npm watch: docker-compose exec superset-node npm run dev (for automatically rebuild the source when we make changes)
+- Run npm watch: docker-compose exec superset-node "cd /app/superset-frontend && npm run dev" (for automatically rebuild the source when we make changes)
 - Do the customization, wait for node server to rebuild and then reload web to see the result ;)
 
 # Build production docker image
