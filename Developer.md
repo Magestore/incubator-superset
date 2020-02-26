@@ -20,5 +20,16 @@
 - define new function to superset/jinja_context.py
 - add the new function name to self.context block in def _init_() function
 
-# Flask app routing table
-- RUN: docker-compose exec superset flask routes
+# Customize Backend (Python Flask Framework)
+## List all app routes
+- docker-compose exec superset flask routes
+## Application structure
+- app.py -> register api (views/$model/api.py) -> superset/models
+## Steps to add, customize api
+- Migrate DB
+- Define/Customize model in superset/models extend Model
+- Define/Customize api extends BaseOwnedModelRestApi, specify datamodel to the model in prev step
+- Define api resource_name (for routes), class_permission_name (for Sec), col list
+- Register newly created Api class to app.py
+## Security
+- Ref to https://flask-appbuilder.readthedocs.io/en/latest/security.html
