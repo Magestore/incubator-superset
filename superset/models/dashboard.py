@@ -125,6 +125,7 @@ class Dashboard(  # pylint: disable=too-many-instance-attributes
     slices = relationship("Slice", secondary=dashboard_slices, backref="dashboards")
     owners = relationship(security_manager.user_model, secondary=dashboard_user)
     published = Column(Boolean, default=False)
+    dashboard_group_id = Column(Integer)
 
     export_fields = [
         "dashboard_title",
@@ -133,6 +134,7 @@ class Dashboard(  # pylint: disable=too-many-instance-attributes
         "description",
         "css",
         "slug",
+        "dashboard_group_id",
     ]
 
     def __repr__(self):

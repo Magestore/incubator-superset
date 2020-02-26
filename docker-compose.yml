@@ -80,6 +80,16 @@ services:
     depends_on: *superset-depends-on
     volumes: *superset-volumes
 
+  adminer:
+    image: adminer
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER: pgsql
+      ADMINER_DEFAULT_DB_HOST: db
+      ADMINER_DEFAULT_DB_NAME: adminer
+    depends_on: *superset-depends-on
+    ports:
+      - 8081:8080
+
 volumes:
   superset_home:
     external: false

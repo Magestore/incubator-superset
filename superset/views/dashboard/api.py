@@ -162,6 +162,7 @@ class DashboardRestApi(DashboardMixin, BaseOwnedModelRestApi):
         "changed_by_name",
         "changed_by_url",
         "changed_on",
+        "dashboard_group_id",
     ]
 
     add_model_schema = DashboardPostSchema()
