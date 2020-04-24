@@ -54,10 +54,12 @@ class DashboardModelView(
     @has_access
     @expose("/list/")
     def list(self):
-        if not app.config["ENABLE_REACT_CRUD_VIEWS"]:
-            return super().list()
-
-        return super().render_app_template()
+        return self.render_template(
+            "superset/dashboard_list.html"
+        )        
+        #if not app.config["ENABLE_REACT_CRUD_VIEWS"]:
+        #    return super().list()
+        #return super().render_app_template()
 
     @action("mulexport", __("Export"), __("Export dashboards?"), "fa-database")
     def mulexport(self, items):  # pylint: disable=no-self-use
